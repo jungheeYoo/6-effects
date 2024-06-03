@@ -56,3 +56,52 @@ function App() {
 // 💡 react.js 는 state를 변화시킬 때 component를 재실행시키는 것!
 
 export default App;
+
+/////////////////////////////////////////////////////////////////
+// Cleanup function - 자주 사용되는 것은 아님
+
+// function Hello() {
+//   // useEffect(() => {
+//   //   console.log('created :)');
+//   //   // component가 destroy될 때 뭔가 할 수 있도록 해주는 것
+//   //   return () => console.log('destroyed :(');
+//   // }, []);
+//   // return <h1>Hello</h1>;
+//   // 위아래 같은 코드
+//   // function byFn() {
+//   //   console.log('bye :(');
+//   // }
+//   // function hiFn() {
+//   //   console.log('created :)');
+//   //   return byFn;
+//   // }
+//   // useEffect(hiFn, []);
+//   // return <h1>Hello</h1>;
+//   // 👍 많이 씀
+//   // 함수는 한 번만 불러올 것임
+//   useEffect(() => {
+//     console.log('hi :)');
+//     return () => console.log('bye :(');
+//   }, []);
+//   // 😂 잘 안씀
+//   // useEffect(function () {
+//   //   console.log('hi :)');
+//   //   return function () {
+//   //     console.log('bye :(');
+//   //   };
+//   // }, []);
+//   return <h1>Hello</h1>;
+// }
+
+// function App() {
+//   const [showing, setShowing] = useState(false);
+//   const onClick = () => setShowing((prev) => !prev);
+//   return (
+//     <div>
+//       {showing ? <Hello /> : null}
+//       <button onClick={onClick}>{showing ? 'Hide' : 'Show'}</button>
+//     </div>
+//   );
+// }
+
+// export default App;
